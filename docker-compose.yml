@@ -8,7 +8,7 @@ services:
       POSTGRES_PASSWORD: invoiceflow_dev
       POSTGRES_DB: invoiceflow
     ports:
-      - "5433:5432"
+      - "5440:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -24,8 +24,8 @@ services:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
     ports:
-      - "9002:9000"
-      - "9003:9001"
+      - "9100:9000"
+      - "9101:9001"
     volumes:
       - minio_data:/data
     healthcheck:
@@ -39,7 +39,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8001:8000"
+      - "8100:8000"
     environment:
       DATABASE_URL: postgresql://invoiceflow:invoiceflow_dev@db:5432/invoiceflow
       AZURE_FORM_RECOGNIZER_ENDPOINT: ${AZURE_FORM_RECOGNIZER_ENDPOINT}
@@ -66,9 +66,9 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "3001:3000"
+      - "3100:3000"
     environment:
-      NEXT_PUBLIC_API_URL: http://localhost:8001
+      NEXT_PUBLIC_API_URL: http://localhost:8100
     volumes:
       - ./frontend:/app
       - /app/node_modules

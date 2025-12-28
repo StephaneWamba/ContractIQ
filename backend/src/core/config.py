@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     MINIO_USE_SSL: bool = False
     
     # CORS
-    CORS_ORIGINS: list[str] = ["http://localhost:3001"]
+    CORS_ORIGINS: list[str] = ["http://localhost:3100"]
     
     # Environment
     ENVIRONMENT: str = "development"

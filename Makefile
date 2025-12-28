@@ -23,9 +23,9 @@ build:
 up:
 	docker-compose up -d
 	@echo "Services starting..."
-	@echo "Backend: http://localhost:8001"
-	@echo "Frontend: http://localhost:3001"
-	@echo "MinIO Console: http://localhost:9003"
+	@echo "Backend: http://localhost:8100"
+	@echo "Frontend: http://localhost:3100"
+	@echo "MinIO Console: http://localhost:9101"
 
 down:
 	docker-compose down
