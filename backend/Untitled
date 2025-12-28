@@ -1,0 +1,21 @@
+# Database
+DATABASE_URL=postgresql://invoiceflow:invoiceflow_dev@localhost:5432/invoiceflow
+
+# Azure Form Recognizer
+AZURE_FORM_RECOGNIZER_ENDPOINT=https://your-resource.cognitiveservices.azure.com/
+AZURE_FORM_RECOGNIZER_KEY=your-key-here
+
+# MinIO/S3
+MINIO_ENDPOINT=localhost:9100
+MINIO_ACCESS_KEY=minioadmin
+MINIO_SECRET_KEY=minioadmin
+MINIO_BUCKET=invoiceflow
+MINIO_USE_SSL=false
+
+# CORS
+CORS_ORIGINS=["http://localhost:3100"]
+
+# Environment
+ENVIRONMENT=development
+DEBUG=true
+

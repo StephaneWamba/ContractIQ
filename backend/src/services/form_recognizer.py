@@ -52,14 +52,17 @@ class FormRecognizerService:
                     if "VendorAddress" in document.fields:
                         vendor_address = document.fields["VendorAddress"].value
                         if vendor_address:
-                            extracted_data["vendor_address"] = ", ".join(
-                                [
-                                    vendor_address.get("StreetAddress", ""),
-                                    vendor_address.get("City", ""),
-                                    vendor_address.get("State", ""),
-                                    vendor_address.get("PostalCode", ""),
-                                ]
-                            )
+                            # AddressValue is an object with attributes, not a dict
+                            address_parts = []
+                            if hasattr(vendor_address, "street_address") and vendor_address.street_address:
+                                address_parts.append(vendor_address.street_address)
+                            if hasattr(vendor_address, "city") and vendor_address.city:
+                                address_parts.append(vendor_address.city)
+                            if hasattr(vendor_address, "state") and vendor_address.state:
+                                address_parts.append(vendor_address.state)
+                            if hasattr(vendor_address, "postal_code") and vendor_address.postal_code:
+                                address_parts.append(vendor_address.postal_code)
+                            extracted_data["vendor_address"] = ", ".join(address_parts) if address_parts else None
                             extracted_data["confidence_scores"]["vendor_address"] = document.fields["VendorAddress"].confidence
 
                     # Extract invoice date

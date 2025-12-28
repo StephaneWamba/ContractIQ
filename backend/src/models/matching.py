@@ -51,7 +51,7 @@ class MatchingResult(Base):
 
     # Relationships
     workspace = relationship("Workspace")
-    po_document = relationship("Document", foreign_keys=[po_document_id], back_populates="matching_results")
+    po_document = relationship("Document", foreign_keys=[po_document_id])
     invoice_document = relationship("Document", foreign_keys=[invoice_document_id])
     delivery_note_document = relationship("Document", foreign_keys=[delivery_note_document_id])
 

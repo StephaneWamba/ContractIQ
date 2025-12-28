@@ -2,12 +2,13 @@ from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, Query
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 from typing import List
+from datetime import datetime
+from pydantic import BaseModel, field_serializer
 import io
 
 from src.core.database import get_db
 from src.models.document import Document, DocumentType
 from src.services.document_processor import DocumentProcessor
-from pydantic import BaseModel
 
 
 router = APIRouter()
@@ -21,8 +22,12 @@ class DocumentResponse(BaseModel):
     file_name: str
     file_size: int
     page_count: int | None
-    created_at: str
-    updated_at: str
+    created_at: datetime
+    updated_at: datetime
+
+    @field_serializer('created_at', 'updated_at')
+    def serialize_datetime(self, dt: datetime) -> str:
+        return dt.isoformat() if dt else None
 
     class Config:
         from_attributes = True

@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from pydantic import BaseModel
+from pydantic import BaseModel, field_serializer
 from typing import List
+from datetime import datetime
 
 from src.core.database import get_db
 from src.models.workspace import Workspace
@@ -18,8 +19,12 @@ class WorkspaceResponse(BaseModel):
     id: str
     name: str
     is_temporary: bool
-    created_at: str
-    updated_at: str
+    created_at: datetime
+    updated_at: datetime
+
+    @field_serializer('created_at', 'updated_at')
+    def serialize_datetime(self, dt: datetime) -> str:
+        return dt.isoformat() if dt else None
 
     class Config:
         from_attributes = True

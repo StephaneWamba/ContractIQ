@@ -10,6 +10,7 @@
 ## 2. Configure InvoiceFlow
 
 **Option A: Using .env file (Recommended)**
+
 ```bash
 cd backend
 cp env.example .env
@@ -18,11 +19,14 @@ cp env.example .env
 
 **Option B: Direct in docker-compose.yml**
 Edit `docker-compose.yml` and replace:
+
 ```yaml
 AZURE_FORM_RECOGNIZER_ENDPOINT: ${AZURE_FORM_RECOGNIZER_ENDPOINT:-}
 AZURE_FORM_RECOGNIZER_KEY: ${AZURE_FORM_RECOGNIZER_KEY:-}
 ```
+
 With:
+
 ```yaml
 AZURE_FORM_RECOGNIZER_ENDPOINT: https://your-resource.cognitiveservices.azure.com/
 AZURE_FORM_RECOGNIZER_KEY: your-actual-key-here
@@ -41,4 +45,3 @@ curl http://localhost:8100/health
 ```
 
 **Done!** You can now upload and process documents.
-

@@ -37,5 +37,6 @@ class Document(Base):
     # Relationships
     workspace = relationship("Workspace", back_populates="documents")
     extracted_data = relationship("ExtractedData", back_populates="document", uselist=False)
-    matching_results = relationship("MatchingResult", back_populates="document")
+    # Note: matching_results relationship removed due to multiple foreign keys
+    # Access via: MatchingResult.po_document, MatchingResult.invoice_document, etc.
 

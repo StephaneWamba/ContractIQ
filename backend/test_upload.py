@@ -1,0 +1,55 @@
+import requests
+import sys
+import os
+
+# Use internal URL when running in container, external when running locally
+API_URL = os.getenv("API_URL", "http://localhost:8100")
+
+# Create workspace
+workspace_response = requests.post(
+    f"{API_URL}/api/workspaces",
+    json={"name": "Test Workspace", "is_temporary": True}
+)
+workspace = workspace_response.json()
+workspace_id = workspace["id"]
+print(f"[OK] Workspace created: {workspace_id}")
+
+# Upload document
+file_path = "../assets/sample-invoice.pdf" if os.path.exists("../assets/sample-invoice.pdf") else "assets/sample-invoice.pdf"
+with open(file_path, "rb") as f:
+    files = {"file": ("sample-invoice.pdf", f, "application/pdf")}
+    params = {
+        "workspace_id": workspace_id,
+        "document_type": "invoice"
+    }
+    
+    print("[*] Uploading document...")
+    response = requests.post(
+        f"{API_URL}/api/documents/upload",
+        params=params,
+        files=files
+    )
+    
+    if response.status_code == 200:
+        doc = response.json()
+        print(f"[OK] Upload successful!")
+        print(f"   Document ID: {doc['id']}")
+        print(f"   Status: {doc['status']}")
+        print(f"   File: {doc['file_name']}")
+        
+        # Get extracted data
+        if doc['status'] == 'PROCESSED':
+            print("\n[*] Fetching extracted data...")
+            extracted = requests.get(
+                f"{API_URL}/api/extracted-data/document/{doc['id']}"
+            )
+            if extracted.status_code == 200:
+                data = extracted.json()
+                print(f"   Invoice Number: {data.get('invoice_number', 'N/A')}")
+                print(f"   Vendor: {data.get('vendor_name', 'N/A')}")
+                print(f"   Total: ${data.get('total_amount', 'N/A')}")
+                print(f"   Line Items: {len(data.get('line_items', []))}")
+    else:
+        print(f"[ERROR] Status: {response.status_code}")
+        print(f"   {response.text}")
+
