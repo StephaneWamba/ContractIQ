@@ -36,7 +36,7 @@ def upgrade() -> None:
         sa.Column('id', sa.String(), nullable=False),
         sa.Column('workspace_id', sa.String(), nullable=False),
         sa.Column('document_type', sa.Enum('PURCHASE_ORDER', 'INVOICE', 'DELIVERY_NOTE', name='documenttype'), nullable=False),
-        sa.Column('status', sa.Enum('UPLOADED', 'PROCESSING', 'PROCESSED', 'FAILED', name='documentstatus'), nullable=True, server_default='uploaded'),
+        sa.Column('status', sa.Enum('UPLOADED', 'PROCESSING', 'PROCESSED', 'FAILED', name='documentstatus'), nullable=True, server_default='UPLOADED'),
         sa.Column('file_name', sa.String(), nullable=False),
         sa.Column('file_path', sa.String(), nullable=False),
         sa.Column('file_size', sa.Integer(), nullable=False),
