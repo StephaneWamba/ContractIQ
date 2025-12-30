@@ -1,0 +1,518 @@
+{
+  "file_path": "/app/assets/ProfessionalServiceContract.pdf",
+  "page_count": 24,
+  "text_length": 56719,
+  "sections_count": 43,
+  "chunks_count": 35,
+  "sections": [
+    {
+      "section": "PARTIES",
+      "page": 1,
+      "text": "The parties to this contract are the SAN DIEGO COUNTY WATER AUTHORITY, a county water authority, (the Water Authority) and  ____________________________, [a / an] ______________ (Contractor).",
+      "confidence": 0.9
+    },
+    {
+      "section": "PAYMENT",
+      "page": 1,
+      "text": "(a) Payment for services.  [Option 1] The Water Authority shall pay for services in a lump sum of $______________ upon satisfactory completion of the services and delivery of the work product.",
+      "confidence": 0.9
+    },
+    {
+      "section": "SCOPE OF SERVICES",
+      "page": 1,
+      "text": "The services to be provided by Contractor [are described in Attachment A] [are (describe within paragraph)].",
+      "confidence": 0.9
+    },
+    {
+      "section": "TIME FOR PERFORMANCE",
+      "page": 2,
+      "text": "(a) [Option 1] Contractor will complete all services by  ________________________.",
+      "confidence": 0.9
+    },
+    {
+      "section": "ASSIGNMENT",
+      "page": 3,
+      "text": "Contractor shall not assign or transfer voluntarily or involuntarily any of its rights, duties, or obligations under this contract without the express written consent of the Water Authority in each instance.",
+      "confidence": 0.9
+    },
+    {
+      "section": "INDEPENDENT CONTRACTOR",
+      "page": 3,
+      "text": "Contractor is an independent contractor.  Neither Contractor nor any of Contractor’s officers, employees, agents or subcontractors, if any, is an employee of the Water Authority by virtue of this contract or performance of any work under this contract.",
+      "confidence": 0.9
+    },
+    {
+      "section": "STANDARD OF PERFORMANCE",
+      "page": 3,
+      "text": "Contractor's services shall be performed in accordance with generally accepted professional practices and principles and in a manner consistent with the level of care and skill ordinarily exercised by members of Contractor’s profession currently practicing under similar conditions.",
+      "confidence": 0.9
+    },
+    {
+      "section": "SUBCONTRACTORS",
+      "page": 3,
+      "text": "(a)  Contractor shall comply with all requirements of the Small Contractor Outreach and Opportunities Program (SCOOP).  Contractor will perform the work personally or through Contractor’s employees except for those tasks to be performed by the subcontractors designated on Attachment D (SCOOP Form A-1).",
+      "confidence": 0.9
+    },
+    {
+      "section": "CONTRACTOR’S EMPLOYEES",
+      "page": 4,
+      "text": "(a) Immigration Reform and Control Act of 1986.  Contractor is aware of the requirements of the Immigration Reform and Control Act of 1986 and shall comply with those requirements, including, but not limited to, verifying the eligibility for employment of all of Contractor’s agents, employees, subcontractors and Contractors that are included in this contract.",
+      "confidence": 0.9
+    },
+    {
+      "section": "FAIR EMPLOYMENT PRACTICES",
+      "page": 5,
+      "text": "(a) Administrative Code Provisions.  Contractor acknowledges and agrees to abide by the following provision of the Water Authority Administrative Code Section 2.24.010 that states:",
+      "confidence": 0.9
+    },
+    {
+      "section": "OWNERSHIP OF WORK PRODUCT",
+      "page": 6,
+      "text": "Upon delivery, the work product, including without limitation, all original reports, writings, recordings, drawings, files, and detailed calculations developed under this contract are the property of the Water Authority.",
+      "confidence": 0.9
+    },
+    {
+      "section": "WORKPLACE CONDUCT AND BEHAVIOR",
+      "page": 6,
+      "text": "Contractor and Contractor’s officers, employees, agents and subcontractors shall comply with the Water Authority’s Substance-free Work Place Policy, Information and Communications Systems Policy, and other rules and regulations governing work place safety, conduct, and behavior, for any portion of the work performed on the premises of the Water Authority or using Water Authority facilities or equipment.",
+      "confidence": 0.9
+    },
+    {
+      "section": "CHANGES IN WORK",
+      "page": 7,
+      "text": "No payment for changed or additional work shall be made unless the changed or additional work has first been approved in writing by the Contract Manager and the parties have agreed upon the appropriate adjustment, if any, to the payment schedule and maximum payment amount for the changed or additional work.",
+      "confidence": 0.9
+    },
+    {
+      "section": "FORMAT OF DOCUMENTS",
+      "page": 7,
+      "text": "Documents submitted to the Water Authority in electronic format shall be formatted according to specifications provided by the Water Authority, or if not otherwise specified, in Microsoft Word, Excel, PowerPoint or other Microsoft Office Professional 2007 format as appropriate for the particular work product or, if directed by the Contract Manager in Adobe Acrobat pdf format.",
+      "confidence": 0.9
+    },
+    {
+      "section": "CONFIDENTIALITY",
+      "page": 8,
+      "text": "(a) Confidential Nature of Information.  Contractor shall treat all information obtained from the Water Authority in the performance of this contract as confidential and proprietary to the Water Authority.",
+      "confidence": 0.9
+    },
+    {
+      "section": "CONFLICT OF INTEREST",
+      "page": 8,
+      "text": "(a)   Local Conflict of Interest Code Compliance.[OPTION 1]:  The Water Authority has determined, based on the scope of the services to be provided by Contractor under this contract, that this contract does not confer on Contractor or any of Contractor’s employees the status of a “designated employee” or “Consultant” of the Water Authority for the purposes of the Water Authority’s Local Conflict of Interest Code and the California Political Reform Act.",
+      "confidence": 0.9
+    },
+    {
+      "section": "PROHIBITED INTEREST",
+      "page": 8,
+      "text": "No official or employee of the Water Authority who is authorized in such capacity on behalf of the Water Authority to negotiate, make, accept, or approve, or take part in negotiating, making, accepting, or approving this contract, shall become directly or indirectly interested in this contract or in any part thereof.",
+      "confidence": 0.9
+    },
+    {
+      "section": "INDEMNIFICATION",
+      "page": 9,
+      "text": "(a) To the fullest extent permitted by law, the Contractor shall (1) immediately defend, and (2) indemnify the Water Authority, and its directors, officers, and employees from and against all liabilities regardless of nature or type arising out of or resulting from Contractor’s performance of services under this contract, or any negligent or wrongful act or omission of the Contractor or Contractor’s officers, employees, agents, or subcontractors.",
+      "confidence": 0.9
+    },
+    {
+      "section": "INSURANCE",
+      "page": 10,
+      "text": "(a) Requirement.  Contractor shall procure and maintain during the period of performance of this contract and for ___ months following completion, insurance from insurance companies authorized to do business in the State of California, as set forth in this section.",
+      "confidence": 0.9
+    },
+    {
+      "section": "ATTACHMENT A",
+      "page": 16,
+      "text": "SCOPE OF WORK",
+      "confidence": 0.9
+    },
+    {
+      "section": "ATTACHMENT B",
+      "page": 17,
+      "text": "PAYMENT and FEE SCHEDULE",
+      "confidence": 0.9
+    },
+    {
+      "section": "ATTACHMENT C",
+      "page": 18,
+      "text": "PERFORMANCE SCHEDULE",
+      "confidence": 0.9
+    },
+    {
+      "section": "ATTACHMENT D",
+      "page": 19,
+      "text": "",
+      "confidence": 0.9
+    },
+    {
+      "section": "ACCIDENT REPORTS",
+      "page": 20,
+      "text": "Contractor shall immediately report (as soon as feasible, but not more than 24 hours) to the Water Authority any accident or other occurrence causing injury to persons or property during the performance of this Contract.",
+      "confidence": 0.9
+    },
+    {
+      "section": "CERTIFICATES OF INSURANCE",
+      "page": 20,
+      "text": "and ADDITIONAL INSURED ENDORSEMENTS",
+      "confidence": 0.9
+    },
+    {
+      "section": "COVENANT AGAINST CONTINGENT FEES",
+      "page": 21,
+      "text": "Contractor agrees that its firm has not employed or retained any company or person, other than a bona fide employee working for Contractor, to solicit or secure this contract, and that Contractor has not paid or agreed to pay any company or person, other than a bona fide employee, any fee, commission, percentage, brokerage fee, gift, or any other consideration contingent upon, or resulting from, the award or making of this contract.",
+      "confidence": 0.9
+    },
+    {
+      "section": "GENERAL LIABILITY SPECIAL ENDORSEMENT",
+      "page": 21,
+      "text": "FOR THE SAN DIEGO COUNTY WATER AUTHORITY",
+      "confidence": 0.9
+    },
+    {
+      "section": "AUTOMOBILE LIABILITY SPECIAL ENDORSEMENT",
+      "page": 22,
+      "text": "FOR THE SAN DIEGO COUNTY WATER AUTHORITY",
+      "confidence": 0.9
+    },
+    {
+      "section": "TERMINATION OR ABANDONMENT",
+      "page": 22,
+      "text": "(a) Water Authority’s Rights.  The Water Authority has the right to terminate or abandon any portion or all of the work by giving ten (10) days’ written notice.",
+      "confidence": 0.9
+    },
+    {
+      "section": "PROFESSIONAL LIABILITY SPECIAL ENDORSEMENT",
+      "page": 23,
+      "text": "FOR THE SAN DIEGO COUNTY WATER AUTHORITY",
+      "confidence": 0.9
+    },
+    {
+      "section": "SUCCESSORS OR ASSIGNS",
+      "page": 23,
+      "text": "All terms, conditions, and provisions of this contract shall apply to and bind the respective heirs, executors, administrators, successors, and assigns of the parties.",
+      "confidence": 0.9
+    },
+    {
+      "section": "ADMINISTRATION",
+      "page": 24,
+      "text": "(a) Contractor’s principal place of business and agent for service of process.  Contractor’s principal place of business is _______________________________.  Contractor’s agent for service of process is ____________________.",
+      "confidence": 0.9
+    },
+    {
+      "section": "ADVICE OF COUNSEL",
+      "page": 24,
+      "text": "The parties agree that they are aware that they have the right to be advised by counsel with respect to the negotiations, terms, and conditions of this contract, and that the decision of whether or not to seek the advice of counsel with respect to this contract is a decision which is the sole responsibility of each of the parties hereto.",
+      "confidence": 0.9
+    },
+    {
+      "section": "ASSIGNMENT OF ANTI-TRUST CLAIMS",
+      "page": 24,
+      "text": "The Contractor offers and agrees to assign to the Water Authority all rights, title and interest in and to all causes of action it may have under Section 4 of the Clayton Act (15 U.S.C.  Sec. 15) or under the Cartwright Act [Chapter 2 (commencing with § 16700) of Part 2 of Division 7 of the Business and Professions Code], arising from purchases of goods, services, or materials pursuant to the contract.",
+      "confidence": 0.9
+    },
+    {
+      "section": "DAMAGE OR LOSS OF EQUIPMENT OR FACILITIES",
+      "page": 24,
+      "text": "(a) General Obligation. Contractor shall pay to the Water Authority the replacement cost of any equipment or repair cost of any facilities provided by the Water Authority for Contractor’s use in performance of services that is lost or damaged by Contractor or Contractor’s officers, employees, agents or subcontractors.",
+      "confidence": 0.9
+    },
+    {
+      "section": "ELECTRONIC COMMUNICATIONS",
+      "page": 24,
+      "text": "During the course of this contract, communications may occur through sending, receiving or exchanging electronic versions of documents and e-mails using commercially available computer software and Internet access.",
+      "confidence": 0.9
+    },
+    {
+      "section": "INDEPENDENT REVIEW",
+      "page": 24,
+      "text": "Each party hereto declares and represents that in entering this contract it has relied and is relying solely upon its own judgment, belief and knowledge of the nature, extent, effect and consequence relating thereto.",
+      "confidence": 0.9
+    },
+    {
+      "section": "INTEGRATION AND MODIFICATION",
+      "page": 24,
+      "text": "This contract represents the entire understanding of the Water Authority and Contractor as to those matters contained herein.",
+      "confidence": 0.9
+    },
+    {
+      "section": "LAWS AND VENUE",
+      "page": 24,
+      "text": "This contract and disputes arising out of or relating to the contract or the parties’ relationship are governed by the laws of the State of California.",
+      "confidence": 0.9
+    },
+    {
+      "section": "SIGNATURES",
+      "page": 24,
+      "text": "The individuals executing this contract represent and warrant that they have the legal capacity and authority to do so on behalf of their respective legal entities.",
+      "confidence": 0.9
+    },
+    {
+      "section": "TAXES",
+      "page": 24,
+      "text": "The Contractor shall pay all applicable federal, state, and local excise, sales, consumer use, and other similar taxes required by law for the execution of the work.",
+      "confidence": 0.9
+    },
+    {
+      "section": "TIME",
+      "page": 24,
+      "text": "Time is of the essence in this contract.  Any reference to days means calendar days unless otherwise specifically stated.",
+      "confidence": 0.9
+    },
+    {
+      "section": "WORKERS' COMPENSATION AND EMPLOYER'S LIABILITY SPECIAL ENDORSEMENT",
+      "page": 24,
+      "text": "FOR THE SAN DIEGO COUNTY WATER AUTHORITY",
+      "confidence": 0.9
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": 1,
+      "page": 1,
+      "section": "PARTIES",
+      "text_length": 2206,
+      "text_preview": "1 Sample Professional Services Contract SAMPLE PROFESSIONAL SERVICES CONTRACT 1. PARTIES: The parties to this contract are the SAN DIEGO COUNTY WATER AUTHORITY, a county water authority, (the Water Au..."
+    },
+    {
+      "chunk_id": 2,
+      "page": 2,
+      "section": "TIME FOR PERFORMANCE",
+      "text_length": 3226,
+      "text_preview": "2 Sample Professional Services Contract is authorized, Contractor shall submit monthly invoices for such expenses, including full documentation of each expense incurred.] [Additional Option B. The inv..."
+    },
+    {
+      "chunk_id": 3,
+      "page": 2,
+      "section": "SUBCONTRACTORS",
+      "text_length": 199,
+      "text_preview": "the willful misconduct of Contractor or its subcontractors. By delivery of completed work, Contractor certifies that the work conforms to the requirements of this contract and all applicable federal,"
+    },
+    {
+      "chunk_id": 4,
+      "page": 3,
+      "section": "INDEPENDENT CONTRACTOR",
+      "text_length": 2387,
+      "text_preview": "3 Sample Professional Services Contract state and local laws. If Contractor is retained to perform services requiring a license, certification, registration or other similar requirement under Californ..."
+    },
+    {
+      "chunk_id": 5,
+      "page": 4,
+      "section": "CONTRACTOR’S EMPLOYEES",
+      "text_length": 3105,
+      "text_preview": "4 Sample Professional Services Contract [Option 2] Contractor will perform the work personally or through Contractor’s employees. Contractor may subcontract work only upon prior approval of the Water ..."
+    },
+    {
+      "chunk_id": 6,
+      "page": 4,
+      "section": "CONTRACTOR’S EMPLOYEES",
+      "text_length": 61,
+      "text_preview": "color, ethnicity, national origin, ancestry, religion, creed,"
+    },
+    {
+      "chunk_id": 7,
+      "page": 5,
+      "section": "FAIR EMPLOYMENT PRACTICES",
+      "text_length": 3334,
+      "text_preview": "5 Sample Professional Services Contract veteran status, physical disability, mental disability, medical condition, marital status, sex, sexual orientation, age, or other status protected from workplac..."
+    },
+    {
+      "chunk_id": 8,
+      "page": 5,
+      "section": "FAIR EMPLOYMENT PRACTICES",
+      "text_length": 43,
+      "text_preview": "or harassment, including but not limited to"
+    },
+    {
+      "chunk_id": 9,
+      "page": 6,
+      "section": "WORKPLACE CONDUCT AND BEHAVIOR",
+      "text_length": 3074,
+      "text_preview": "6 Sample Professional Services Contract sexual harassment, arising from the conduct of the Contractor or any of the Contractor’s officers, employees, agents, licensees, or subcontractors. In the event..."
+    },
+    {
+      "chunk_id": 10,
+      "page": 6,
+      "section": "WORKPLACE CONDUCT AND BEHAVIOR",
+      "text_length": 99,
+      "text_preview": "additional work. An approved change or addition, along with the payment adjustment, if any, will be"
+    },
+    {
+      "chunk_id": 11,
+      "page": 7,
+      "section": "CONFIDENTIALITY",
+      "text_length": 2965,
+      "text_preview": "7 Sample Professional Services Contract effective upon an amendment to this contract executed by both parties. The amendment shall not render ineffective or invalidate unaffected portions of this cont..."
+    },
+    {
+      "chunk_id": 12,
+      "page": 7,
+      "section": "FORMAT OF DOCUMENTS",
+      "text_length": 29,
+      "text_preview": "for the purposes of the Water"
+    },
+    {
+      "chunk_id": 13,
+      "page": 8,
+      "section": "INDEMNIFICATION",
+      "text_length": 3342,
+      "text_preview": "8 Sample Professional Services Contract Authority’s Local Conflict of Interest Code and the California Political Reform Act. This contract does not require or permit Contractor to make a governmental ..."
+    },
+    {
+      "chunk_id": 14,
+      "page": 8,
+      "section": "PROHIBITED INTEREST",
+      "text_length": 679,
+      "text_preview": "indemnified party. (b) The duty to defend is a separate and distinct obligation from the Contractor’s duty to indemnify. The Contractor shall be obligated to defend, in all legal, equitable, administr..."
+    },
+    {
+      "chunk_id": 15,
+      "page": 9,
+      "section": "INSURANCE",
+      "text_length": 2841,
+      "text_preview": "9 Sample Professional Services Contract defend Water Authority. The obligation to defend extends through final judgment, including exhaustion of any appeals. The defense obligation includes an obligat..."
+    },
+    {
+      "chunk_id": 16,
+      "page": 10,
+      "section": "ACCIDENT REPORTS",
+      "text_length": 3116,
+      "text_preview": "10 Sample Professional Services Contract For the commercial general liability insurance, the Water Authority (including its directors, officers, employees, and agents) shall be named as additional ins..."
+    },
+    {
+      "chunk_id": 17,
+      "page": 10,
+      "section": "COVENANT AGAINST CONTINGENT FEES",
+      "text_length": 192,
+      "text_preview": "time and description of the accident or other occurrence. 21. COVENANT AGAINST CONTINGENT FEES: Contractor agrees that its firm has not employed or retained any company or person, other than a"
+    },
+    {
+      "chunk_id": 18,
+      "page": 11,
+      "section": "TERMINATION OR ABANDONMENT",
+      "text_length": 3205,
+      "text_preview": "11 Sample Professional Services Contract bona fide employee working for Contractor, to solicit or secure this contract, and that Contractor has not paid or agreed to pay any company or person, other t..."
+    },
+    {
+      "chunk_id": 19,
+      "page": 11,
+      "section": "INSURANCE",
+      "text_length": 319,
+      "text_preview": "any equipment or repair cost of any facilities provided by the Water Authority for Contractor’s use in performance of services that is lost or damaged by Contractor or Contractor’s officers, employees..."
+    },
+    {
+      "chunk_id": 20,
+      "page": 12,
+      "section": "ELECTRONIC COMMUNICATIONS",
+      "text_length": 3245,
+      "text_preview": "12 Sample Professional Services Contract facilities in order to perform the scope of work. Keys shall not be loaned, duplicated, or given to anyone not authorized to have the keys. Contractor will sig..."
+    },
+    {
+      "chunk_id": 21,
+      "page": 12,
+      "section": "INSURANCE",
+      "text_length": 384,
+      "text_preview": "place of business is _______________________________. Contractor’s agent for service of process is ____________________. (b) Water Authority’s Representative. The Water Authority’s representative for ..."
+    },
+    {
+      "chunk_id": 22,
+      "page": 13,
+      "section": "INTEGRATION AND MODIFICATION",
+      "text_length": 2241,
+      "text_preview": "13 Sample Professional Services Contract (c) Contractor’s Representative. The Contractor’s representative for administration of this contract is ________________, who is designated as the Project Mana..."
+    },
+    {
+      "chunk_id": 23,
+      "page": 14,
+      "section": "INDEPENDENT CONTRACTOR",
+      "text_length": 1895,
+      "text_preview": "14 Sample Professional Services Contract the contract. 30. INDEPENDENT REVIEW: Each party hereto declares and represents that in entering this contract it has relied and is relying solely upon its own..."
+    },
+    {
+      "chunk_id": 24,
+      "page": 15,
+      "section": "INSURANCE",
+      "text_length": 278,
+      "text_preview": "15 Sample Professional Services Contract By: ________________________________ Contractor: ____________________________________ By: ________________________________ Approved as to form: DANIEL S. HENTS..."
+    },
+    {
+      "chunk_id": 25,
+      "page": 16,
+      "section": "ATTACHMENT A",
+      "text_length": 67,
+      "text_preview": "16 Sample Professional Services Contract ATTACHMENT A SCOPE OF WORK"
+    },
+    {
+      "chunk_id": 26,
+      "page": 17,
+      "section": "ATTACHMENT B",
+      "text_length": 78,
+      "text_preview": "17 Sample Professional Services Contract ATTACHMENT B PAYMENT and FEE SCHEDULE"
+    },
+    {
+      "chunk_id": 27,
+      "page": 18,
+      "section": "ATTACHMENT C",
+      "text_length": 74,
+      "text_preview": "18 Sample Professional Services Contract ATTACHMENT C PERFORMANCE SCHEDULE"
+    },
+    {
+      "chunk_id": 28,
+      "page": 19,
+      "section": "ATTACHMENT D",
+      "text_length": 53,
+      "text_preview": "19 Sample Professional Services Contract ATTACHMENT D"
+    },
+    {
+      "chunk_id": 29,
+      "page": 20,
+      "section": "CERTIFICATES OF INSURANCE",
+      "text_length": 102,
+      "text_preview": "20 Sample Professional Services Contract CERTIFICATES OF INSURANCE and ADDITIONAL INSURED ENDORSEMENTS"
+    },
+    {
+      "chunk_id": 30,
+      "page": 21,
+      "section": "GENERAL LIABILITY SPECIAL ENDORSEMENT",
+      "text_length": 3476,
+      "text_preview": "rev. 5-98 GENERAL LIABILITY SPECIAL ENDORSEMENT FOR THE SAN DIEGO COUNTY WATER AUTHORITY ENDORSEMENT NO. ISSUE DATE (MM/DD/YY) PRODUCER POLICY INFORMATION Insurance Company: Policy No.: Policy Period:..."
+    },
+    {
+      "chunk_id": 31,
+      "page": 21,
+      "section": "GENERAL LIABILITY SPECIAL ENDORSEMENT",
+      "text_length": 754,
+      "text_preview": "to waive, alter or extend any of the limits, conditions, agreements or exclusions of the policy to which this endorsement is attached. ENDORSEMENT HOLDER / ADDITIONAL INSURED SAN DIEGO COUNTY WATER AU..."
+    },
+    {
+      "chunk_id": 32,
+      "page": 22,
+      "section": "TERMINATION OR ABANDONMENT",
+      "text_length": 3369,
+      "text_preview": "rev. 5-98 AUTOMOBILE LIABILITY SPECIAL ENDORSEMENT FOR THE SAN DIEGO COUNTY WATER AUTHORITY ENDORSEMENT NO. ISSUE DATE (MM/DD/YY) PRODUCER POLICY INFORMATION Insurance Company: Policy No.: Policy Peri..."
+    },
+    {
+      "chunk_id": 33,
+      "page": 22,
+      "section": "TERMINATION OR ABANDONMENT",
+      "text_length": 597,
+      "text_preview": "is attached. ENDORSEMENT HOLDER / ADDITIONAL INSURED SAN DIEGO COUNTY WATER AUTHORITY AUTHORIZED REPRESENTATIVE 4677 OVERLAND AVENUE SAN DIEGO, CA 92123 I __________________________(print/type name), ..."
+    },
+    {
+      "chunk_id": 34,
+      "page": 23,
+      "section": "SUCCESSORS OR ASSIGNS",
+      "text_length": 2400,
+      "text_preview": "rev. 5-98 PROFESSIONAL LIABILITY SPECIAL ENDORSEMENT FOR THE SAN DIEGO COUNTY WATER AUTHORITY ENDORSEMENT NO. ISSUE DATE (MM/DD/YY) PRODUCER POLICY INFORMATION Insurance Company: Policy No.: Policy Pe..."
+    },
+    {
+      "chunk_id": 35,
+      "page": 24,
+      "section": "WORKERS' COMPENSATION AND EMPLOYER'S LIABILITY SPECIAL ENDORSEMENT",
+      "text_length": 2599,
+      "text_preview": "rev. 5-98 WORKERS' COMPENSATION AND EMPLOYER'S LIABILITY SPECIAL ENDORSEMENT FOR THE SAN DIEGO COUNTY WATER AUTHORITY ENDORSEMENT NO. ISSUE DATE (MM/DD/YY) PRODUCER POLICY INFORMATION Insurance Compan..."
+    }
+  ],
+  "metadata": {
+    "file_type": "pdf",
+    "file_path": "/app/assets/ProfessionalServiceContract.pdf"
+  }
+}

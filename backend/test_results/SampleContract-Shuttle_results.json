@@ -1,0 +1,285 @@
+{
+  "file_path": "/app/assets/SampleContract-Shuttle.pdf",
+  "page_count": 10,
+  "text_length": 32954,
+  "sections_count": 24,
+  "chunks_count": 18,
+  "sections": [
+    {
+      "section": "DUTIES",
+      "page": 1,
+      "text": "A. CONSULTANT agrees to exercise special skill to accomplish the following results in a manner reasonably satisfactory to COMMISSION: ______________________________, as specified in Exhibit A: Scope of Services, which by this reference is incorporated herein.",
+      "confidence": 0.9
+    },
+    {
+      "section": "COMPENSATION",
+      "page": 2,
+      "text": "In consideration for CONSULTANT accomplishing said result, COMMISSION agrees to pay CONSULTANT as follows:  A. Total payment is not to exceed $_____for time and materials at the rates and conditions set forth in Exhibit B: Fee Schedule, which by this reference is incorporated herein.",
+      "confidence": 0.9
+    },
+    {
+      "section": "EARLY TERMINATION",
+      "page": 3,
+      "text": "A. COMMISSION may terminate this Agreement for its convenience any time, in whole or part, by giving CONSULTANT thirty-day (30-day) written notice thereof.",
+      "confidence": 0.9
+    },
+    {
+      "section": "INDEMNIFICATION FOR DAMAGES, TAXES AND CONTRIBUTIONS",
+      "page": 3,
+      "text": "CONSULTANT shall exonerate, indemnify, defend, and hold harmless the COMMISSION (which for the purpose of this Agreement shall include, without limitation, its officers, agents, employees and volunteers) from and against:",
+      "confidence": 0.9
+    },
+    {
+      "section": "TERM",
+      "page": 3,
+      "text": "This Agreement shall take effect on (DATE); contingent upon prior approval by the COMMISSION governing board, and the CONSULTANT shall commence work after notification to proceed by the COMMISSION’S Contract Manager.",
+      "confidence": 0.9
+    },
+    {
+      "section": "INSURANCE",
+      "page": 4,
+      "text": "CONSULTANT, at its sole cost and expense, for the full term of this Agreement, and any extensions thereof, shall obtain and maintain at minimum compliance with all of the following insurance coverage(s) and requirements.",
+      "confidence": 0.9
+    },
+    {
+      "section": "EQUAL EMPLOYMENT OPPORTUNITY",
+      "page": 6,
+      "text": "During and in relation to the performance of this Agreement, CONSULTANT agrees to the following: The CONSULTANT shall not discriminate or permit discrimination against any employee or applicant for employment in any manner prohibited by Federal, State and local laws, including but not limited to race, color, gender, religion, national origin, ancestry, physical or mental disability, medical condition, marital status, sexual orientation, age (over 18), veteran status, pregnancy, or any other non-merit factor unrelated to job duties.",
+      "confidence": 0.9
+    },
+    {
+      "section": "FEDERAL, STATE AND LOCAL LAWS",
+      "page": 6,
+      "text": "CONSULTANT warrants that in the performance of this Agreement, it shall exercise usual and customary professional care in its efforts to comply with all applicable federal, state and local laws, statutes and ordinances and all lawful orders, rules and regulations promulgated thereunder.",
+      "confidence": 0.9
+    },
+    {
+      "section": "HARASSMENT",
+      "page": 6,
+      "text": "The COMMISSION maintains a strict policy prohibiting unlawful harassment, including sexual harassment, in any form, including verbal, physical and visual harassment by any employee, supervisor, manager, officer or Board member, or agent of the employer.",
+      "confidence": 0.9
+    },
+    {
+      "section": "LICENSES",
+      "page": 6,
+      "text": "If a license of any kind is required of CONSULTANT, its employees, agents, or sub CONSULTANTs by Federal or State law, CONSULTANT warrants that such license has been obtained, is valid and in good standing, that CONSULTANT shall keep it in effect at all times during the terms of this Agreement, and that any applicable bond has been posted in accordance with all applicable laws and regulations.",
+      "confidence": 0.9
+    },
+    {
+      "section": "INDEPENDENT CONSULTANT STATUS",
+      "page": 7,
+      "text": "CONSULTANT and COMMISSION have reviewed and considered the principal test and secondary factors herein and agree that CONSULTANT is an independent CONSULTANT and not an employee of COMMISSION.",
+      "confidence": 0.9
+    },
+    {
+      "section": "INSPECTION OF WORK",
+      "page": 7,
+      "text": "The CONSULTANT and any subconsultant shall permit the COMMISSION, the state, and the FHWA if federal participating funds are used in this contract, to review and inspect the project activities and files at all reasonable times during the term of this Agreement including review and inspection on a daily basis.",
+      "confidence": 0.9
+    },
+    {
+      "section": "RETENTION AND AUDIT OF RECORDS",
+      "page": 7,
+      "text": "For the purpose of determining compliance with Public Contract Code 10115, et seq. and Title 21, California Code of Regulations, Chapter 21, Section 2500 et seq., if applicable and other matters connected with the performance of the contract pursuant to Government Code 8546.7: CONSULTANT, subconsultants, and the COMMISSION shall maintain all books, documents, papers, accounting records, and other evidence pertaining to the performance of the contract, including but not limited to, the costs of administering the Agreement.",
+      "confidence": 0.9
+    },
+    {
+      "section": "ACKNOWLEDGMENT",
+      "page": 8,
+      "text": "CONSULTANT shall acknowledge in all reports and literature that the material is prepared for and on behalf of the COMMISSION.",
+      "confidence": 0.9
+    },
+    {
+      "section": "SAFETY",
+      "page": 8,
+      "text": "A. The CONSULTANT shall comply with OSHA regulations applicable to CONSULTANT regarding necessary safety equipment or procedures.  The CONSULTANT shall comply with safety instructions issued by the COMMISSION Safety Officer and other COMMISSION representatives.",
+      "confidence": 0.9
+    },
+    {
+      "section": "WORK PRODUCTS",
+      "page": 8,
+      "text": "All material, data, information, and written, graphic or other work produced under this Agreement is subject to the unqualified and unconditional right of the COMMISSION to use, reproduce, publish, display, and make derivative use of all such work, or any part of it, free of charge and in any manner and for any purpose; and to authorize others to do so.",
+      "confidence": 0.9
+    },
+    {
+      "section": "AUDIT REVIEW PROCEDURES",
+      "page": 9,
+      "text": "A. Any dispute concerning a question of fact arising under an interim or post-completion audit of this Agreement that is not disposed of by agreement, shall be reviewed by the COMMISSION’S Contract Manager.",
+      "confidence": 0.9
+    },
+    {
+      "section": "DISPUTES",
+      "page": 9,
+      "text": "This Agreement shall be construed under the laws of the State of California.  Pending final resolution of a dispute hereunder, CONSULTANT shall proceed diligently with the performance of this Agreement and shall comply with COMMISSION’s instructions.",
+      "confidence": 0.9
+    },
+    {
+      "section": "MODIFICATION OF AGREEMENT",
+      "page": 9,
+      "text": "A. This Agreement may be amended or modified only by mutual written agreement of the parties.",
+      "confidence": 0.9
+    },
+    {
+      "section": "NONASSIGNMENT",
+      "page": 9,
+      "text": "The CONSULTANT shall not assign the Agreement without the prior written consent of the COMMISSION.",
+      "confidence": 0.9
+    },
+    {
+      "section": "NOTIFICATION",
+      "page": 9,
+      "text": "All notices hereunder and communications regarding interpretation of the terms of this Agreement and changes thereto, shall be effected by the mailing thereof by registered or certified mail, return receipt requested, postage prepaid, and addressed as follows:",
+      "confidence": 0.9
+    },
+    {
+      "section": "REBATES, KICKBACKS OR OTHER UNLAWFUL CONSIDERATION",
+      "page": 9,
+      "text": "The CONSULTANT warrants that this Agreement was not obtained or secured through rebates kickbacks or other unlawful consideration, either promised or paid to any COMMISSION employee.",
+      "confidence": 0.9
+    },
+    {
+      "section": "SUBCONTRACTING",
+      "page": 9,
+      "text": "A. The CONSULTANT shall perform the work contemplated with resources available within its own organization; and no portion of the work pertinent to this Agreement shall be subcontracted without prior written authorization by the COMMISSION’S Contract Manager, except that, which is expressly identified in the approved Fee Schedule.",
+      "confidence": 0.9
+    },
+    {
+      "section": "COMPLETE AGREEMENT",
+      "page": 10,
+      "text": "A. AGREEMENT: The two parties to this Agreement, who are the before named CONSULTANT and the before named COMMISSION, hereby agree that this Agreement constitutes the entire Agreement which is made and concluded in duplicate between the two parties.",
+      "confidence": 0.9
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": 1,
+      "page": 1,
+      "section": "DUTIES",
+      "text_length": 2691,
+      "text_preview": "Page 1 Sample Contract Contract No.___________ PROFESSIONAL SERVICES AGREEMENT THIS AGREEMENT made and entered into this _______day of , 20 by and between the SANTA CRUZ COUNTY REGIONAL TRANSPORTATION..."
+    },
+    {
+      "chunk_id": 2,
+      "page": 2,
+      "section": "COMPENSATION",
+      "text_length": 3274,
+      "text_preview": "Page 2 deliverable items according to the schedule set forth in the Scope of Services, the COMMISSION may delay payment and/or terminate this Agreement in accordance with the provisions of Section 4 o..."
+    },
+    {
+      "chunk_id": 3,
+      "page": 2,
+      "section": "COMPENSATION",
+      "text_length": 300,
+      "text_preview": "effect such termination. Thereafter, CONSULTANT shall have no further claims against COMMISSION under this Agreement. B. COMMISSION may terminate this Agreement for CONSULTANT's default if a federal o..."
+    },
+    {
+      "chunk_id": 4,
+      "page": 3,
+      "section": "INDEMNIFICATION FOR DAMAGES, TAXES AND CONTRIBUTIONS",
+      "text_length": 3330,
+      "text_preview": "Page 3 principal, or if CONSULTANT or CONSULTANT's principal makes an assignment for the benefit of creditors, or if CONSULTANT breaches any term(s) or violates any provision(s) of this Agreement and ..."
+    },
+    {
+      "chunk_id": 5,
+      "page": 3,
+      "section": "INSURANCE",
+      "text_length": 563,
+      "text_preview": "to this fact by initialing here . 2) Automobile Liability Insurance for each of CONSULTANT’S vehicles used in the performance of this Agreement, including owned, non-owned (e.g. owned by CONSULTANT’S ..."
+    },
+    {
+      "chunk_id": 6,
+      "page": 4,
+      "section": "INSURANCE",
+      "text_length": 3224,
+      "text_preview": "Page 4 3) Comprehensive or Commercial General Liability Insurance coverage in the minimum amount of one million dollars ($1,000,000) combined single limit (CSL), including coverage for: (a) bodily inj..."
+    },
+    {
+      "chunk_id": 7,
+      "page": 4,
+      "section": "INSURANCE",
+      "text_length": 349,
+      "text_preview": "new Certificate of Insurance evidencing insurance coverage as provided for herein, for not less than either the remainder of the term of the contract, or for a period of not less than one (1) year. Ne..."
+    },
+    {
+      "chunk_id": 8,
+      "page": 5,
+      "section": "FEDERAL, STATE AND LOCAL LAWS",
+      "text_length": 3341,
+      "text_preview": "Page 5 coverage as herein provided, the COMMISSION may, in addition to any other remedies it may have, terminate this Agreement upon occurrence of such event. 6) If any insurance policy of CONSULTANT ..."
+    },
+    {
+      "chunk_id": 9,
+      "page": 5,
+      "section": "INSURANCE",
+      "text_length": 572,
+      "text_preview": "employees and applicants for employment, notice setting forth the provisions of this non- discrimination clause. CONSULTANT shall comply fully with all federal, State and local laws and regulations wh..."
+    },
+    {
+      "chunk_id": 10,
+      "page": 6,
+      "section": "HARASSMENT",
+      "text_length": 3299,
+      "text_preview": "Page 6 In the event of CONSULTANT’S non-compliance with the non-discrimination clauses of this Agreement or with any of the said rules, regulations or orders the COMMISSION may cancel, terminate or su..."
+    },
+    {
+      "chunk_id": 11,
+      "page": 6,
+      "section": "RETENTION AND AUDIT OF RECORDS",
+      "text_length": 998,
+      "text_preview": "COMMISSION conducts public business. It is recognized that it is not necessary that all secondary factors support creation of an independent CONSULTANT relationship, but rather that overall there are ..."
+    },
+    {
+      "chunk_id": 12,
+      "page": 7,
+      "section": "INSPECTION OF WORK",
+      "text_length": 3178,
+      "text_preview": "Page 7 not limited to, the costs of administering the Agreement. All parties shall make such materials available at their respective offices at all reasonable times during the Agreement period and for..."
+    },
+    {
+      "chunk_id": 13,
+      "page": 7,
+      "section": "RETENTION AND AUDIT OF RECORDS",
+      "text_length": 844,
+      "text_preview": "complete the review and approval process. Copies may be made for CONSULTANT's records but shall not be furnished to others without the COMMISSION's prior written authorization. Such deliverables shall..."
+    },
+    {
+      "chunk_id": 14,
+      "page": 8,
+      "section": "SAFETY",
+      "text_length": 3157,
+      "text_preview": "Page 8 16. SAFETY A. The CONSULTANT shall comply with OSHA regulations applicable to CONSULTANT regarding necessary safety equipment or procedures. The CONSULTANT shall comply with safety instructions..."
+    },
+    {
+      "chunk_id": 15,
+      "page": 8,
+      "section": "SUBCONTRACTING",
+      "text_length": 747,
+      "text_preview": "than 30 days after issuance of the final audit report, the CONSULTANT may request a review by the COMMISSION’S Executive Director of unresolved audit issues. The request for review will be submitted i..."
+    },
+    {
+      "chunk_id": 16,
+      "page": 9,
+      "section": "NONASSIGNMENT",
+      "text_length": 3109,
+      "text_preview": "Page 9 B. Any subcontract in excess of $25,000 entered into as a result of this contract, shall contain all the provisions required by this Agreement to be applicable to those subconsultants. C. No su..."
+    },
+    {
+      "chunk_id": 17,
+      "page": 9,
+      "section": "SUBCONTRACTING",
+      "text_length": 28,
+      "text_preview": "Exhibit A: Scope of Services"
+    },
+    {
+      "chunk_id": 18,
+      "page": 10,
+      "section": "INDEPENDENT CONSULTANT STATUS",
+      "text_length": 1022,
+      "text_preview": "Page 10  Exhibit B: Fee Schedule Each of the undersigned represents and warrants that he or she is duly authorized to execute and deliver this Agreement and that such execution is binding upon the en..."
+    }
+  ],
+  "metadata": {
+    "file_type": "pdf",
+    "file_path": "/app/assets/SampleContract-Shuttle.pdf"
+  }
+}
