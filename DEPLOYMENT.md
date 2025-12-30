@@ -16,6 +16,7 @@ This guide explains how to deploy ContractIQ to production using Railway for the
 ### Step 1: Push Code to GitHub
 
 Make sure your code is pushed to GitHub:
+
 ```bash
 git add .
 git commit -m "Prepare for deployment"
@@ -31,9 +32,11 @@ git push origin main
 
 **Important**: Railway needs to know where the backend code is.
 
-1. In Railway project, go to your service settings
-2. Set **Root Directory** to `backend`
-3. Railway will auto-detect `Dockerfile.prod` via `railway.json` configuration
+1. In Railway project, go to your service → **Settings**
+2. Scroll down to **Root Directory** section
+3. Click **Change** and set it to: `backend`
+4. Click **Save**
+5. Railway will now detect the Python project and use `Dockerfile.prod` (configured in `railway.json`)
 
 ### Step 3: Add PostgreSQL Database
 
@@ -66,6 +69,7 @@ ANTHROPIC_API_KEY=sk-...
 ```
 
 **To generate a secret key:**
+
 ```bash
 python -c "import secrets; print(secrets.token_urlsafe(32))"
 ```
@@ -87,6 +91,7 @@ alembic upgrade head
 ### Step 6: Get Backend URL
 
 After deployment, Railway will generate a domain like:
+
 - `https://your-service.railway.app`
 
 Copy this URL - you'll need it for the frontend.
@@ -139,9 +144,11 @@ Redeploy the backend service (or it will auto-redeploy when you save the variabl
 ### Verify Deployment
 
 1. **Backend Health Check:**
+
    ```bash
    curl https://your-railway-service.railway.app/health
    ```
+
    Should return: `{"status":"healthy"}`
 
 2. **Frontend:**
@@ -163,6 +170,7 @@ If you add new migrations in the future:
 ### Environment Variables Reference
 
 #### Backend (Railway):
+
 - `DATABASE_URL` - PostgreSQL connection (auto-provided)
 - `ENVIRONMENT=production`
 - `SECRET_KEY` - JWT secret key (generate strong key)
@@ -171,6 +179,7 @@ If you add new migrations in the future:
 - `ANTHROPIC_API_KEY` - Optional
 
 #### Frontend (Vercel):
+
 - `NEXT_PUBLIC_API_URL` - Backend API URL
 
 ---
@@ -180,10 +189,12 @@ If you add new migrations in the future:
 ### Backend Issues
 
 1. **Migrations not running:**
+
    - Add `alembic upgrade head` to startup script
    - Or run manually via Railway CLI
 
 2. **CORS errors:**
+
    - Check `CORS_ORIGINS` includes your Vercel URL
    - Ensure no trailing slash
    - Format: `https://your-app.vercel.app` or JSON array
@@ -195,6 +206,7 @@ If you add new migrations in the future:
 ### Frontend Issues
 
 1. **API connection errors:**
+
    - Verify `NEXT_PUBLIC_API_URL` is correct
    - Check backend is running and accessible
    - Ensure CORS is configured correctly
@@ -219,4 +231,3 @@ If you add new migrations in the future:
 2. **Vector Store**: ChromaDB is currently using local storage. For production, consider ChromaDB Cloud or Pinecone
 3. **Monitoring**: Set up Railway and Vercel monitoring/alerting
 4. **SSL/TLS**: Both Railway and Vercel provide SSL certificates automatically
-
