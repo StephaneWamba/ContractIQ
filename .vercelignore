@@ -1,0 +1,36 @@
+# Ignore backend and other files for Vercel deployment
+backend/
+contractiq/
+*.py
+*.pyc
+__pycache__/
+.env
+.env.*
+!frontend/.env.local
+
+# Python
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Database
+*.db
+*.sqlite
+alembic/
+
+# Docker
+Dockerfile*
+docker-compose.yml
+.dockerignore
+
+# Development
+Makefile
+*.md
+!README.md
+
+# Railway
+.railwayignore
+nixpacks.toml
+

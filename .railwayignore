@@ -1,0 +1,22 @@
+# Ignore frontend files for Railway deployment
+frontend/
+node_modules/
+.git/
+.vercel/
+
+# Development files
+*.md
+!README.md
+docker-compose.yml
+Makefile
+.env.local
+.env.*.local
+
+# Frontend specific
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+
+# Assets (if not needed in backend)
+assets/
+

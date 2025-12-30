@@ -1,0 +1,33 @@
+# Development Dockerfile for Next.js
+FROM node:20-alpine
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+WORKDIR /app
+
+# Copy package files first for better caching
+COPY package.json pnpm-lock.yaml* .npmrc* ./
+
+# Install dependencies
+RUN pnpm install
+
+# Copy application code
+COPY . .
+
+# Copy and make entrypoint script executable
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Expose port
+EXPOSE 3000
+
+# Environment variables for hot reload
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV WATCHPACK_POLLING true
+
+# Use entrypoint script
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+# Start development server
+CMD ["pnpm", "dev"]

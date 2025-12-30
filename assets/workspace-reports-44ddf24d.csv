@@ -1,0 +1,97 @@
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,International Item,12.0,100.0,1200.0,12.0,100.0,1200.0,0.0,0.0,Match
+
+
+=== Matching Result 2 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Item 1,1.0,10.0,10.0,1.0,10.0,10.0,0.0,0.0,Match
+002,Item 2,2.0,20.0,40.0,2.0,20.0,40.0,0.0,0.0,Match
+003,Item 3,3.0,30.0,90.0,3.0,30.0,90.0,0.0,0.0,Match
+004,Item 4,4.0,40.0,160.0,4.0,40.0,160.0,0.0,0.0,Match
+005,Item 5,5.0,50.0,250.0,5.0,50.0,250.0,0.0,0.0,Match
+006,Item 6,6.0,60.0,360.0,6.0,60.0,360.0,0.0,0.0,Match
+007,Item 7,7.0,70.0,490.0,7.0,70.0,490.0,0.0,0.0,Match
+,Item 8,8.0,80.0,640.0,8.0,80.0,640.0,0.0,0.0,Match
+009,Item 9,9.0,90.0,810.0,9.0,90.0,810.0,0.0,0.0,Match
+010,Item 10,10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+011,Item 11,11.0,110.0,1210.0,11.0,110.0,1210.0,0.0,0.0,Match
+013,Item 13,13.0,130.0,1690.0,,,,,,Missing in Invoice
+014,Item 14,14.0,140.0,1960.0,,,,,,Missing in Invoice
+015,Item 15,15.0,150.0,2250.0,,,,,,Missing in Invoice
+12,,,,,12.0,120.0,1440.0,,,Extra in Invoice
+13,,,,,13.0,130.0,1690.0,,,Extra in Invoice
+14,,,,,14.0,140.0,1960.0,,,Extra in Invoice
+15,,,,,15.0,150.0,2250.0,,,Extra in Invoice
+
+
+=== Matching Result 3 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Product A (USD),10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+002,Product B (USD),5.0,200.0,1000.0,5.0,200.0,1000.0,0.0,0.0,Match
+
+
+=== Matching Result 4 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Product A (EUR),10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+002,Product B (EUR),5.0,200.0,1000.0,5.0,200.0,1000.0,0.0,0.0,Match
+
+
+=== Matching Result 5 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Standard Item,20.0,50.0,1000.0,20.0,50.0,1000.0,0.0,0.0,Match
+002,Premium Item,10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+
+
+=== Matching Result 6 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Product A (GBP),10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+002,Product B (GBP),5.0,200.0,1000.0,5.0,200.0,1000.0,0.0,0.0,Match
+
+
+=== Matching Result 7 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Premium Equipment,2.0,50000.0,100000.0,2.0,50000.0,100000.0,0.0,0.0,Match
+002,Professional Service,1.0,25000.0,25000.0,1.0,25000.0,25000.0,0.0,0.0,Match
+
+
+=== Matching Result 8 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Standard Item,20.0,50.0,1000.0,20.0,50.0,1000.0,0.0,0.0,Match
+002,Premium Item,10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+
+
+=== Matching Result 9 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Bulk Item A,1000.0,5.0,5000.0,1000.0,5.0,5000.0,0.0,0.0,Match
+002,Bulk Item B,500.0,10.0,5000.0,500.0,10.0,5000.0,0.0,0.0,Match
+003,Bulk Item C,250.0,20.0,5000.0,250.0,20.0,5000.0,0.0,0.0,Match
+
+
+=== Matching Result 10 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Standard Item,20.0,50.0,1000.0,20.0,50.0,1000.0,0.0,0.0,Match
+002,Premium Item,10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+
+
+=== Matching Result 11 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Item A,15.0,80.0,1200.0,15.0,80.0,1200.0,0.0,0.0,Match
+002,Item B,8.0,150.0,1200.0,8.0,150.0,1200.0,0.0,0.0,Match
+
+
+=== Matching Result 12 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Standard Item,20.0,50.0,1000.0,20.0,50.0,1000.0,0.0,0.0,Match
+002,Premium Item,10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+
+
+=== Matching Result 13 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Product A (USD),10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+002,Product B (USD),5.0,200.0,1000.0,5.0,200.0,1000.0,0.0,0.0,Match
+
+
+=== Matching Result 14 ===
+Item Number,Description,PO Quantity,PO Unit Price,PO Line Total,Invoice Quantity,Invoice Unit Price,Invoice Line Total,Quantity Difference,Price Difference,Status
+001,Product A (USD),10.0,100.0,1000.0,10.0,100.0,1000.0,0.0,0.0,Match
+002,Product B (USD),5.0,200.0,1000.0,5.0,200.0,1000.0,0.0,0.0,Match

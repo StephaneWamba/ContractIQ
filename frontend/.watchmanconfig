@@ -1,0 +1,12 @@
+{
+  "ignore_dirs": [
+    "node_modules",
+    ".next",
+    ".git",
+    ".pnpm-store",
+    "dist",
+    "build"
+  ]
+}
+
+

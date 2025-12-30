@@ -1,0 +1,58 @@
+# Private documentation
+private/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Database
+*.db
+*.sqlite
+
+# Uploads
+uploads/
+
+# Node.js / pnpm
+node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
+

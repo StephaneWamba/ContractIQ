@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: contractiq
+      POSTGRES_PASSWORD: contractiq_dev
+      POSTGRES_DB: contractiq
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U contractiq"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8000"
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://contractiq:contractiq_dev@db:5432/contractiq
+      ENVIRONMENT: development
+    volumes:
+      - ./backend:/app
+      - backend_uploads:/app/uploads
+      - ./assets:/app/assets
+    depends_on:
+      db:
+        condition: service_healthy
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # Frontend is now run locally (not in Docker) to avoid file watching issues
+  # To run: cd frontend && pnpm dev
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile.dev
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     NEXT_PUBLIC_API_URL: http://localhost:8002/api/v1
+  #     NODE_ENV: development
+  #     WATCHPACK_POLLING: "2000"
+  #     NODE_OPTIONS: "--max-old-space-size=4096"
+  #     CHOKIDAR_USEPOLLING: "true"
+  #     CHOKIDAR_INTERVAL: "2000"
+  #     __NEXT_DISABLE_MEMORY_WATCHER: "1"
+  #   volumes:
+  #     - ./frontend:/app
+  #     - frontend_node_modules:/app/node_modules
+  #     - frontend_next:/app/.next
+  #   depends_on:
+  #     - backend
+  #   command: pnpm dev
+
+volumes:
+  postgres_data:
+  backend_uploads:
+  # frontend_node_modules:
+  # frontend_next:
+
