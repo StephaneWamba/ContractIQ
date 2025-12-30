@@ -52,10 +52,15 @@ async def upload_document(
     processor = DocumentProcessor(db)
     try:
         document = await processor.process_document(workspace_id, document_type, file)
+        # Refresh the document to get updated status
+        db.refresh(document)
         return document
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
+        import traceback
+        error_detail = f"Failed to process document: {str(e)}\n{traceback.format_exc()}"
+        print(f"ERROR: {error_detail}")  # Log to console
         raise HTTPException(status_code=500, detail=f"Failed to process document: {str(e)}")
 
 

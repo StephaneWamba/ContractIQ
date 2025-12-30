@@ -45,3 +45,4 @@ curl http://localhost:8100/health
 ```
 
 **Done!** You can now upload and process documents.
+

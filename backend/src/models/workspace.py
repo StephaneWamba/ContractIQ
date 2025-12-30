@@ -18,3 +18,4 @@ class Workspace(Base):
     # Relationships
     documents = relationship("Document", back_populates="workspace", cascade="all, delete-orphan")
 
+

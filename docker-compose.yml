@@ -40,10 +40,15 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8100:8000"
+    env_file:
+      - .env
     environment:
       DATABASE_URL: postgresql://invoiceflow:invoiceflow_dev@db:5432/invoiceflow
       AZURE_FORM_RECOGNIZER_ENDPOINT: ${AZURE_FORM_RECOGNIZER_ENDPOINT:-}
       AZURE_FORM_RECOGNIZER_KEY: ${AZURE_FORM_RECOGNIZER_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+      USE_LLM_FOR_EXTRACTION: ${USE_LLM_FOR_EXTRACTION:-true}
       MINIO_ENDPOINT: minio:9000
       MINIO_ACCESS_KEY: minioadmin
       MINIO_SECRET_KEY: minioadmin
@@ -54,6 +59,7 @@ services:
     volumes:
       - ./backend:/app
       - uploads:/app/uploads
+      - ./assets:/app/assets
     depends_on:
       db:
         condition: service_healthy

@@ -29,6 +29,11 @@ class ExtractedDataResponse(BaseModel):
     vendor_address: Optional[str]
     date: Optional[datetime]
     total_amount: Optional[float]
+    currency_code: Optional[str]
+    subtotal: Optional[float]
+    tax_amount: Optional[float]
+    tax_rate: Optional[float]
+    due_date: Optional[datetime]
     line_items: List[Dict[str, Any]]
     confidence_scores: Dict[str, float]
     extraction_model: str

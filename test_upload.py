@@ -48,3 +48,4 @@ with open("assets/sample-invoice.pdf", "rb") as f:
         print(f"❌ Error: {response.status_code}")
         print(f"   {response.text}")
 
+

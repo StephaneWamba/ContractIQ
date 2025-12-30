@@ -28,6 +28,11 @@ class Settings(BaseSettings):
     MAX_PAGES: int = 100
     ALLOWED_EXTENSIONS: list[str] = [".pdf", ".docx"]
     
+    # LLM (optional, for enhanced extraction)
+    OPENAI_API_KEY: str | None = None
+    OPENAI_MODEL: str = "gpt-4o-mini"  # Fast and cost-effective
+    USE_LLM_FOR_EXTRACTION: bool = True  # Enable LLM enhancement
+    
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

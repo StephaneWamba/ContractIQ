@@ -47,3 +47,4 @@ def extract_text_from_pdf(file_content: bytes, page_range: Optional[Tuple[int, i
     except Exception as e:
         raise Exception(f"Failed to extract text from PDF: {str(e)}")
 
+

@@ -1,0 +1,14 @@
+# Ignore files not needed for Railway deployment
+frontend/
+assets/
+private/
+*.md
+.git/
+.gitignore
+docker-compose.yml
+Makefile
+test_upload.py
+.env
+.env.local
+*.log
+

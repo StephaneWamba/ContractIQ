@@ -21,6 +21,13 @@ class ExtractedData(Base):
     date = Column(DateTime)
     total_amount = Column(Numeric(10, 2))
     
+    # Financial fields
+    currency_code = Column(String)  # ISO currency code (USD, EUR, GBP, etc.)
+    subtotal = Column(Numeric(10, 2))  # Amount before tax
+    tax_amount = Column(Numeric(10, 2))  # Total tax amount
+    tax_rate = Column(Numeric(5, 2))  # Tax rate percentage
+    due_date = Column(DateTime)  # Payment due date
+    
     # Line items (stored as JSON)
     line_items = Column(JSON)
     
