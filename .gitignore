@@ -56,3 +56,4 @@ out/
 .DS_Store
 Thumbs.db
 
+*.md
