@@ -93,56 +93,19 @@ graph TB
 ContractIQ/
 ├── backend/                    # FastAPI backend
 │   ├── src/
-│   │   ├── api/                # API endpoints
-│   │   │   ├── auth.py         # Authentication
-│   │   │   ├── workspaces.py   # Workspace management
-│   │   │   ├── documents.py    # Document upload/processing
-│   │   │   ├── clauses.py      # Clause extraction
-│   │   │   ├── conversations.py # Q&A conversations
-│   │   │   └── exports.py      # Export services
-│   │   ├── core/               # Core configuration
-│   │   │   ├── config.py       # Settings
-│   │   │   ├── database.py     # DB connection
-│   │   │   ├── auth.py         # JWT authentication
-│   │   │   └── cache.py        # Redis caching
-│   │   ├── models/             # SQLAlchemy models
-│   │   │   ├── user.py
-│   │   │   ├── workspace.py
-│   │   │   ├── document.py
-│   │   │   ├── clause.py
-│   │   │   └── conversation.py
-│   │   ├── schemas/            # Pydantic schemas
-│   │   └── services/           # Business logic
-│   │       ├── document_processor.py
-│   │       ├── clause_extractor.py
-│   │       ├── rag_pipeline.py
-│   │       ├── vector_store.py
-│   │       └── embedding_service.py
+│   │   ├── api/                # REST API endpoints (auth, workspaces, documents, clauses, conversations, exports)
+│   │   ├── core/               # Core configuration (config, database, auth, cache)
+│   │   ├── models/             # SQLAlchemy models (user, workspace, document, clause, conversation)
+│   │   ├── schemas/            # Pydantic request/response schemas
+│   │   └── services/           # Business logic (document processing, clause extraction, RAG pipeline, vector store)
 │   ├── alembic/                # Database migrations
-│   ├── Dockerfile
 │   └── pyproject.toml
-├── frontend/                    # Next.js frontend
-│   ├── app/                     # App Router pages
-│   │   ├── page.tsx            # Home
-│   │   ├── documents/           # Document management
-│   │   ├── clauses/             # Clause extraction
-│   │   ├── qa/                  # Q&A interface
-│   │   └── settings/           # Settings
-│   ├── components/              # React components
-│   │   ├── ui/                  # shadcn/ui components
-│   │   ├── layout/              # Layout components
-│   │   ├── documents/           # Document components
-│   │   ├── clauses/             # Clause components
-│   │   └── qa/                  # Q&A components
-│   └── lib/
-│       └── api.ts               # API client
-├── docs/                        # Documentation
-│   ├── user-guide/              # User documentation
-│   ├── architecture/            # Architecture docs
-│   ├── api/                     # API reference
-│   └── development/             # Dev docs
-├── docker-compose.yml           # Docker services
-└── README.md
+├── frontend/                   # Next.js frontend
+│   ├── app/                    # App Router pages (documents, clauses, qa, settings)
+│   ├── components/             # React components (ui, layout, documents, clauses, qa)
+│   └── lib/                    # API client & utilities
+├── docs/                       # Documentation (user guide, architecture, API reference, development)
+└── docker-compose.yml          # Docker services configuration
 ```
 
 ---
