@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+log.log
+
+# Database
+*.db
+*.sqlite
+
+# Uploads and data
+uploads/
+chroma_db/
+test_results/
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Documentation
+*.md
+!README.md
+
+# Misc
+.DS_Store
+*.tmp
+
+# Frontend build artifacts (if any)
+node_modules/
+.next/
+build/
+dist/
+
+# Railway
+.railway/
+railway.json
+
+# Private files
+private/
