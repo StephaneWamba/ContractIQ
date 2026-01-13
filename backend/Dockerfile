@@ -15,7 +15,7 @@ RUN chmod +x /usr/local/bin/uv
 WORKDIR /app
 
 # Copy dependency files
-COPY pyproject.toml ./
+COPY backend/pyproject.toml pyproject.toml
 
 # Install dependencies using uv
 RUN uv pip install --system --no-cache -e .
@@ -35,7 +35,7 @@ COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/pytho
 COPY --from=builder /usr/local/bin /usr/local/bin
 
 # Copy application code
-COPY . .
+COPY backend/ .
 
 # Create necessary directories
 RUN mkdir -p /app/uploads /app/chroma_db && \
