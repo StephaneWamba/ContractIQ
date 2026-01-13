@@ -8,6 +8,7 @@ from uuid import UUID
 from src.core.database import get_db
 from src.core.auth import get_current_user
 from src.core.cache import cache_service
+from src.core.logging_config import get_logger
 from src.models.document import Document, DocumentStatus
 from src.models.clause import Clause
 from src.models.workspace import Workspace
@@ -23,6 +24,7 @@ from src.services.vector_store import VectorStore
 from src.services.clause_deduplicator import ClauseDeduplicator
 
 router = APIRouter()
+logger = get_logger(__name__)
 clause_extractor = ClauseExtractor()
 vector_store = VectorStore()
 clause_deduplicator = ClauseDeduplicator()
