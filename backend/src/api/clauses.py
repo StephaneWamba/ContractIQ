@@ -51,7 +51,9 @@ def extract_clauses(
     # Get document
     document = db.query(Document).filter(Document.id == document_id).first()
     if not document:
+        logger.warning(f"Document {document_id} not found for clause extraction")
         raise HTTPException(status_code=404, detail="Document not found")
+    logger.info(f"Starting clause extraction for document {document_id} ({document.name})")
 
     # Verify workspace belongs to user
     workspace = db.query(Workspace).filter(
@@ -171,6 +173,17 @@ def extract_clauses(
         db.add(db_clause)
         db_clauses.append(db_clause)
 
+    # Re-validate document exists before commit (prevent race conditions)
+    document_still_exists = db.query(Document).filter(Document.id == document_id).first()
+    if not document_still_exists:
+        logger.error(f"Document {document_id} disappeared during clause extraction - possible race condition")
+        db.rollback()
+        raise HTTPException(
+            status_code=410,  # Gone
+            detail="Document was deleted during clause extraction. Please re-upload the document."
+        )
+
+    logger.info(f"Committing {len(db_clauses)} clauses for document {document_id}")
     db.commit()
 
     # Refresh to get IDs
