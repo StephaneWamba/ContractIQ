@@ -41,6 +41,7 @@ class ClauseType(str, Enum):
     AMENDMENT = "Amendment"
     SEVERABILITY = "Severability"
     ENTIRE_AGREEMENT = "Entire Agreement"
+    WAIVER = "Waiver"
     DEFINITIONS = "Definitions"
     OTHER = "Other"
 
