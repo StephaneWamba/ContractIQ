@@ -2,6 +2,10 @@
 
 **Document Intelligence & RAG Platform for Contract Review**
 
+![Risk Analysis](frontend/public/risk_analysis.png)
+
+![Chat Interface](frontend/public/chat.png)
+
 ContractIQ is a unified platform that combines contract clause extraction with semantic search across multiple documents. Users can review contracts, extract key clauses, identify risks, and ask questions across document sets with citations and evidence packs.
 
 ---
