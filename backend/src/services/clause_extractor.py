@@ -43,6 +43,7 @@ class ClauseType(str, Enum):
     ENTIRE_AGREEMENT = "Entire Agreement"
     WAIVER = "Waiver"
     DEFINITIONS = "Definitions"
+    INDEPENDENT_CONTRACTOR = "Independent Contractor"
     OTHER = "Other"
 
 
@@ -147,12 +148,48 @@ class ClauseExtractor:
 
         return all_clauses
 
+    def _validate_and_correct_clause_types(
+        self,
+        clauses: List[ExtractedClause]
+    ) -> List[ExtractedClause]:
+        """
+        Validate and correct invalid clause types.
+        Replaces any invalid clause_type with 'Other'.
+        """
+        valid_types = {ct.value for ct in ClauseType}
+        corrected_clauses = []
+
+        for clause in clauses:
+            if clause.clause_type.value not in valid_types:
+                logger.warning(
+                    f"Invalid clause_type '{clause.clause_type.value}' detected. "
+                    f"Correcting to 'Other'. Clause text: {clause.extracted_text[:100]}..."
+                )
+                # Create a new clause with corrected type
+                corrected_clause = ExtractedClause(
+                    clause_type=ClauseType.OTHER,
+                    extracted_text=clause.extracted_text,
+                    page_number=clause.page_number,
+                    section_name=clause.section_name,
+                    confidence_score=clause.confidence_score,
+                    risk_score=clause.risk_score,
+                    risk_flags=clause.risk_flags,
+                    risk_reasoning=clause.risk_reasoning,
+                    clause_subtype=clause.clause_subtype
+                )
+                corrected_clauses.append(corrected_clause)
+            else:
+                corrected_clauses.append(clause)
+
+        return corrected_clauses
+
     def _extract_from_batch(
         self,
         chunks: List[Dict],
-        document_context: Optional[Dict] = None
+        document_context: Optional[Dict] = None,
+        max_retries: int = 2
     ) -> List[ExtractedClause]:
-        """Extract clauses from a batch of chunks"""
+        """Extract clauses from a batch of chunks with retry logic"""
 
         # Prepare chunk text for LLM
         chunk_texts = []
@@ -171,22 +208,138 @@ class ClauseExtractor:
         # Build system prompt with few-shot examples
         system_prompt = self._build_extraction_prompt(document_context)
 
-        # Extract clauses using structured output
+        # Extract clauses using structured output with retry logic
+        for attempt in range(max_retries + 1):
+            try:
+                result: ClauseExtractionResult = self.client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    response_model=ClauseExtractionResult,
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": f"Extract all clauses from the following document chunks:\n\n{combined_text}"}
+                    ],
+                    temperature=0.0,  # Zero temperature for maximum consistency
+                )
+
+                # Validate and correct clause types before returning
+                validated_clauses = self._validate_and_correct_clause_types(
+                    result.clauses)
+
+                if validated_clauses != result.clauses:
+                    logger.info(
+                        f"Corrected {len(result.clauses) - len(validated_clauses)} invalid clause types "
+                        f"in batch extraction"
+                    )
+
+                return validated_clauses
+
+            except Exception as e:
+                error_msg = str(e)
+
+                # Check if it's a validation error for clause_type
+                if "clause_type" in error_msg.lower() and "enum" in error_msg.lower():
+                    logger.warning(
+                        f"Validation error on attempt {attempt + 1}/{max_retries + 1}: {error_msg[:200]}"
+                    )
+
+                    if attempt < max_retries:
+                        # Add correction instruction to prompt for retry
+                        correction_note = (
+                            "\n\nCRITICAL REMINDER: You MUST use ONLY the clause types listed above. "
+                            "If a clause doesn't match any specific type, you MUST use 'Other'. "
+                            "Never invent new clause type names. Any clause that doesn't fit the listed "
+                            "categories MUST be classified as 'Other'."
+                        )
+                        system_prompt = self._build_extraction_prompt(
+                            document_context) + correction_note
+                        continue
+                    else:
+                        # Last attempt failed, try to extract without strict validation
+                        logger.error(
+                            f"All retry attempts failed. Attempting fallback extraction without strict validation."
+                        )
+                        return self._fallback_extraction(combined_text, system_prompt)
+                else:
+                    # Non-validation error, log and return empty
+                    logger.error(
+                        f"Error extracting clauses: {e}", exc_info=True)
+                    return []
+
+        return []
+
+    def _fallback_extraction(
+        self,
+        combined_text: str,
+        system_prompt: str
+    ) -> List[ExtractedClause]:
+        """
+        Fallback extraction method that handles invalid types gracefully.
+        Uses a more permissive model that allows string clause_type, then corrects.
+        """
         try:
-            result: ClauseExtractionResult = self.client.chat.completions.create(
+            # Use a temporary model that accepts string clause_type
+            class PermissiveExtractedClause(BaseModel):
+                """Temporary permissive clause model"""
+                clause_type: str = Field(description="Type of clause")
+                extracted_text: str = Field(
+                    description="Complete text of the clause")
+                page_number: int = Field(
+                    description="Page number where clause appears")
+                section_name: str = Field(
+                    default="Unknown", description="Section name")
+                confidence_score: float = Field(
+                    ge=0.0, le=1.0, description="Confidence score")
+                risk_score: float = Field(
+                    ge=0.0, le=100.0, default=0.0, description="Risk score")
+                risk_flags: List[str] = Field(
+                    default_factory=list, description="Risk flags")
+                risk_reasoning: str = Field(
+                    default="", description="Risk reasoning")
+                clause_subtype: Optional[str] = Field(
+                    default=None, description="Subtype")
+
+            class PermissiveResult(BaseModel):
+                clauses: List[PermissiveExtractedClause]
+
+            result: PermissiveResult = self.client.chat.completions.create(
                 model="gpt-4o-mini",
-                response_model=ClauseExtractionResult,
+                response_model=PermissiveResult,
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": f"Extract all clauses from the following document chunks:\n\n{combined_text}"}
                 ],
-                temperature=0.1,  # Low temperature for consistency
+                temperature=0.0,
             )
 
-            return result.clauses
+            # Convert to proper ExtractedClause objects, correcting invalid types
+            corrected_clauses = []
+            valid_types = {ct.value for ct in ClauseType}
+
+            for clause in result.clauses:
+                clause_type_value = clause.clause_type
+                if clause_type_value not in valid_types:
+                    logger.warning(
+                        f"Fallback: Invalid clause_type '{clause_type_value}' corrected to 'Other'"
+                    )
+                    clause_type_value = ClauseType.OTHER.value
+
+                corrected_clauses.append(ExtractedClause(
+                    clause_type=ClauseType(clause_type_value),
+                    extracted_text=clause.extracted_text,
+                    page_number=clause.page_number,
+                    section_name=clause.section_name,
+                    confidence_score=clause.confidence_score,
+                    risk_score=clause.risk_score,
+                    risk_flags=clause.risk_flags,
+                    risk_reasoning=clause.risk_reasoning,
+                    clause_subtype=clause.clause_subtype
+                ))
+
+            return corrected_clauses
 
         except Exception as e:
-            logger.error(f"Error extracting clauses: {e}", exc_info=True)
+            logger.error(
+                f"Fallback extraction also failed: {e}", exc_info=True)
             return []
 
     def _build_extraction_prompt(self, document_context: Optional[Dict] = None) -> str:
@@ -196,11 +349,28 @@ class ClauseExtractor:
 
 Your task is to:
 1. Identify and extract all extractable clauses from contract text
-2. Classify each clause by type (Termination, Payment, Liability, etc.)
+2. Classify each clause by type using ONLY the clause types listed below
 3. Assess risk factors and assign risk scores
 4. Provide confidence scores for extraction accuracy
 
-CLAU SE TYPES TO EXTRACT:
+CRITICAL RULE - CLAUSE TYPE CLASSIFICATION:
+You MUST use ONLY the clause types from the list below. There are NO exceptions to this rule.
+
+If a clause doesn't fit any of the specific categories listed below, you MUST classify it as "Other".
+Examples of clauses that should be "Other":
+- Documentation requirements
+- Delivery schedules
+- Training requirements
+- Maintenance obligations
+- Quality standards
+- Any clause that doesn't clearly match a specific category below
+
+NEVER invent new clause type names. NEVER use names like "Documentation", "Delivery", "Training", etc.
+If you are unsure which category a clause belongs to, use "Other".
+
+The valid clause types are EXACTLY these (case-sensitive):
+
+CLAUSE TYPES TO EXTRACT:
 - Termination: Early termination, breach termination, convenience termination
 - Payment: Payment terms, schedules, penalties, late fees
 - Liability: Liability limitations, caps, exclusions
@@ -221,6 +391,9 @@ CLAU SE TYPES TO EXTRACT:
 - Amendment: Amendment procedures
 - Severability: Severability clauses
 - Entire Agreement: Entire agreement clauses
+- Independent Contractor: Contractor status, relationship definitions, authority limitations
+- Waiver: Waiver clauses, rights waivers
+- Definitions: Term definitions, glossary
 
 RISK ASSESSMENT:
 For each clause, you MUST provide:
@@ -261,6 +434,7 @@ EXTRACTION GUIDELINES:
 5. If no extractable clauses found, return empty list
 6. Preserve exact text from the document
 7. Include page numbers accurately
+8. ONLY use clause types from the "CLAUSE TYPES TO EXTRACT" list above - never create new clause types
 
 EXAMPLES:
 
@@ -292,6 +466,29 @@ Extraction:
 - risk_flags: [unfair_payment_terms]
 - risk_reasoning: "5% monthly penalty rate translates to 60% annually, which is significantly higher than typical late payment penalties (usually 1-2% per month). While 30-day payment terms are standard, the penalty rate is excessive and may not be enforceable in some jurisdictions. Consider negotiating a lower penalty rate (1-2% per month) or requesting a grace period before penalties apply."
 - confidence_score: 0.92
+
+Example 4 - Low Risk Independent Contractor Clause:
+Text: "Vendor is an independent contractor and not an employee or agent of Watson or Watson Clients. Vendor has no authority to act for or on behalf of Watson or Watson Clients."
+Extraction:
+- clause_type: Independent Contractor
+- risk_score: 10 (low risk - standard relationship definition)
+- risk_flags: []
+- risk_reasoning: "This clause clearly establishes the vendor as an independent contractor rather than an employee, which provides important legal protection for both parties. It prevents misunderstandings about employment status and reduces potential liability for employment-related claims. The limitation on authority is standard and reasonable."
+- confidence_score: 0.95
+
+Example 5 - Using "Other" for Unmapped Clause Types:
+Text: "The Contractor shall provide three (3) sets of documentation in printed form or CD-ROM format for the Commissioning of Equipment."
+Extraction:
+- clause_type: Other
+- clause_subtype: Documentation Requirements
+- risk_score: 15 (low risk - standard deliverable requirement)
+- risk_flags: []
+- risk_reasoning: "This clause specifies documentation delivery requirements, which is a standard contractual obligation. While it doesn't fit into a specific category like Payment or Intellectual Property, it represents a reasonable deliverable requirement that ensures the client receives necessary materials for equipment operation."
+- confidence_score: 0.90
+
+NOTE: In Example 5, even though the clause mentions "documentation", we use "Other" because "Documentation" is NOT in the valid clause type list. The clause_subtype field can be used to provide more specific classification while keeping clause_type as "Other".
+
+FINAL REMINDER: If you encounter ANY clause that doesn't match the exact categories listed above, you MUST use "Other" as the clause_type. Never create new clause type names.
 
 Now extract clauses from the provided text, following these guidelines precisely."""
 

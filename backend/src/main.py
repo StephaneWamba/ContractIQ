@@ -22,8 +22,10 @@ if not hasattr(logging, log_level.upper()):
 
 setup_logging(
     level=log_level,
-    json_format=getattr(settings, 'environment', 'development') == "production",
-    log_file=Path(getattr(settings, 'log_file', None)) if hasattr(settings, 'log_file') and getattr(settings, 'log_file', None) else None
+    json_format=getattr(settings, 'environment',
+                        'development') == "production",
+    log_file=Path(getattr(settings, 'log_file', None)) if hasattr(
+        settings, 'log_file') and getattr(settings, 'log_file', None) else None
 )
 logger = get_logger(__name__)
 
@@ -38,9 +40,17 @@ app = FastAPI(
 )
 
 # CORS middleware
+logger.info(f"CORS_ORIGINS env value: '{settings.cors_origins}'")
+cors_origins_list = [origin.strip() for origin in settings.cors_origins.split(',') if origin.strip()]
+if not cors_origins_list:
+    cors_origins_list = ["http://localhost:3000"]  # Fallback
+    logger.warning("No valid CORS origins found, using fallback")
+
+logger.info(f"CORS origins configured: {cors_origins_list}")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins,
+    allow_origins=cors_origins_list,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -61,7 +71,7 @@ async def contractiq_exception_handler(request: Request, exc: ContractIQExceptio
             "method": request.method,
         }
     )
-    
+
     return JSONResponse(
         status_code=exc.status_code,
         content=ErrorResponse(
@@ -85,7 +95,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
             "message": error["msg"],
             "code": error["type"]
         })
-    
+
     logger.warning(
         f"Validation error: {exc.errors()}",
         extra={
@@ -94,7 +104,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
             "errors": errors
         }
     )
-    
+
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
         content=ErrorResponse(
@@ -121,7 +131,7 @@ async def general_exception_handler(request: Request, exc: Exception):
         },
         exc_info=True
     )
-    
+
     # In production, don't expose internal error details
     if settings.environment == "production":
         message = "An internal error occurred. Please try again later."
@@ -133,7 +143,7 @@ async def general_exception_handler(request: Request, exc: Exception):
             "exception_type": type(exc).__name__,
             "traceback": traceback.format_exc()
         }
-    
+
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content=ErrorResponse(
@@ -193,4 +203,3 @@ def root():
 def health():
     """Health check endpoint"""
     return {"status": "healthy"}
-

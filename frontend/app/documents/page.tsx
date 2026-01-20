@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { MainLayout } from "@/components/layout/main-layout";
 import { WorkspaceSelector } from "@/components/workspace/workspace-selector";
@@ -11,7 +11,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { FolderOpen } from "lucide-react";
 
-export default function DocumentsPage() {
+// Force dynamic rendering to avoid static generation issues with useSearchParams
+export const dynamic = 'force-dynamic';
+
+function DocumentsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialWorkspaceId = searchParams.get("workspaceId") || "";
@@ -107,6 +110,20 @@ export default function DocumentsPage() {
         )}
       </div>
     </MainLayout>
+  );
+}
+
+export default function DocumentsPage() {
+  return (
+    <Suspense fallback={
+      <MainLayout>
+        <div className="flex items-center justify-center py-12">
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </MainLayout>
+    }>
+      <DocumentsContent />
+    </Suspense>
   );
 }
 

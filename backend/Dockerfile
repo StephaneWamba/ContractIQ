@@ -1,5 +1,5 @@
 # Multi-stage Dockerfile for optimized builds
-FROM python:3.11-slim as builder
+FROM python:3.11-slim AS builder
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -41,9 +41,9 @@ COPY backend/ .
 RUN mkdir -p /app/uploads /app/chroma_db && \
     chmod -R 755 /app/uploads /app/chroma_db
 
-# Expose port
+# Expose port (Railway will set PORT env var dynamically)
 EXPOSE 8000
 
-# Run application
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run application - use PORT env var if set (Railway), otherwise default to 8000 (local dev)
+CMD ["sh", "-c", "uvicorn src.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
 
